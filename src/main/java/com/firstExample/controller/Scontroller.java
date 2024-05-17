@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class Scontroller {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	//@ResponseBody
-	public String hello() {
+	public String home() {
 		return "index";
+	}
+	@RequestMapping(value = "/transactions", method = RequestMethod.GET)
+	public String transactions() {
+		return "transactions";
 	}
 }

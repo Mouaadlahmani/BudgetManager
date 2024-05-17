@@ -11,20 +11,29 @@ public class test {
 	public static void main(String[] args) {
 		SessionFactory Factory = HibernateUtil.getSessionFactory();
 		
-		  Transactions transaction = new Transactions(); Date date = new
-		  Date(24,11,2023); transaction.setMontant(200); transaction.setDate(date);
-		  transaction.setCategorie("Electronic");
-		  transaction.setDescription("tkhaaarbii9");
+		/*
+		 * Transactions transaction = new Transactions(); Date date = new
+		 * Date(24,11,2023); transaction.setMontant(200); transaction.setDate(date);
+		 * transaction.setCategorie("Electronic");
+		 * transaction.setDescription("tkhaaarbii9");
+		 */
 		 
+		/*
+		 * Budgets budgets = new Budgets(); budgets.setCategorie("Tahada");
+		 * budgets.setLimit(149.99);
+		 */
 		
-		Budgets budgets = new Budgets();
-		budgets.setLimit(1499.99);
-		budgets.setCategorie("Tahada");
-		
+		Categorie categorie = new Categorie();
+		categorie.setFood("Food");
+		categorie.setHousing("Housing");
+		categorie.setInsurance("Insurance");
+		categorie.setMedicalHealthcare("Medical And Healthcare");
+		categorie.setPersonalSpending("Personal Spending");
+		categorie.setTransportation("Transportation");
 		Session session = Factory.openSession();
 		
 		Transaction ts = session.beginTransaction();
-		session.save(budgets);
+		session.save(categorie);
 		
 		ts.commit();
 		

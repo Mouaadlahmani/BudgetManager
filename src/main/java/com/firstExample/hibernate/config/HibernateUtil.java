@@ -9,6 +9,7 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import com.firstExample.metier.Budgets;
+import com.firstExample.metier.Categorie;
 import com.firstExample.metier.Transactions;
 
 public class HibernateUtil {
@@ -32,7 +33,8 @@ public class HibernateUtil {
 		  configuration.addAnnotatedClass(Transactions.class);
 		  configuration.setProperties(properties);
 		  configuration.addAnnotatedClass(Budgets.class);
-		  
+		  configuration.setProperties(properties);
+		  configuration.addAnnotatedClass(Categorie.class);
 		  ServiceRegistry serviceRegistry = new
 		  StandardServiceRegistryBuilder().applySettings(configuration.getProperties())
 		  .build();
